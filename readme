@@ -1,0 +1,91 @@
+1. 所有页面开始都采用二级三部分的结构
+  <el-container>
+    <el-header>业绩审核</el-header>
+    <el-main></el-main>
+  </el-container>
+
+2. 所有业务模块都以<div class="lb-section">包含
+   如果该模块有子标题，使用<div class="lb-section-header">包含
+   header中支持两类子元素： 
+   a. 子标题<div class="lb-header-text">待审核的申请</div>
+   b. 右边的操作按钮，往往为“增加”  <div class="lb-header-action"><el-button type="primary" plain>增加</el-button></div>
+
+  注意：如果页面由tab布局，则<div class="lb-section">应该应用在tab的内部最外层
+
+3. 所有按钮使用<el-button type="primary" plain>增加</el-button>，后期会将primary换成橙黄色
+   如果是取消或者关闭，使用 type="info"
+
+4.页面底部的操作区使用
+      <div class="lb-action">
+        <el-button type="primary" plain>确定</el-button>
+        <el-button type="info" plain>取消</el-button>
+      </div>
+
+5.所有表格必须带有Index列<el-table-column type="index" width="50"></el-table-column>
+
+6.所有表格的列总宽度与主显示区的空白间隔不得多于3rem
+
+7.除了border宽度为，其它计量单位均使用rem
+
+8.正常来说，store(vuex)只会存储当前登录用户的信息，不得往store里随意增加数据项，状态变化的影响范围必须遵从影响范围最小的原则。
+
+9.所有保存或者其它类似操作需要加提示  this.$message({
+                                      message: '恭喜你，这是一条成功消息',
+                                      type: 'success'
+                                    });
+
+10.所有删除或者敏感动作（比如leads转移，审核等操作）必须有二次确认：
+    this.$confirm('此操作将杀死姓名为'段良'的用户, 是否继续?', '提示', {
+          confirmButtonText: '确定',
+          cancelButtonText: '取消',
+          type: 'warning'
+        })
+    信息提示中需要明确业务信息
+
+11.所有增加之前项目的通用代码、增加新的库引用、造组件轮子的动作必须经过确认。
+
+12.其它任何不确定的地方先问再做，如果有实现难度超过预期的或者觉得非常复杂的项目也必须先确认，正常来说不会出现类似情况。
+
+补充：
+13.搜索框设置:
+  外围使用<fieldset class="lb-search-group">
+          <legend>搜索条件设置</legend>
+        </fieldset>
+  每一行使用<div class="lb-form-line"></div>来包裹，一行可以有两组<el-form-item label="活动名称">
+  也可以只有一组<el-form-item label="活动名称">，只有一组时占满全行
+  操作按钮使用<div class="lb-form-action"></div>来包裹
+
+14./mixins/shared上有CommonActionMixin.js 
+  集成了全屏集成了调用全屏loading的方法，如果仅仅是按钮或者表格直接在component中的对应位置按照文档实现就行，不需要使用这个
+
+15.系统集成了moment.js用来处理日期与时间，例如moment(date json对象).format('MMMM Do YYYY, HH:mm:ss a'); 
+
+16.所有金额在数值后面使用.toFixed(2)
+
+17.输入框校验使用element-ui自带的rules处理
+
+18.服务器回传的非简单操作结果（即不是成功或者失败），以Dialog控件来提示。
+
+19.CSS尽量使用scss/sass的标准来书写，外面加上<style lang="scss" scoped></style>，例：
+  .menu-wrapper {
+    display: flex;
+    .left-wrapper {
+      width: 20rem;
+    }
+  }
+
+20.集成leads画像和时间线的方法:参见: /pages/main/ComponentTest.vuex
+  a.  import LeadsTimeline from "../../components/shared/LeadsTimeline"
+      import CommonActionMixin from '../../mixins/shared/CommonActionMixin'
+  b.  使用mixin的方法打开组件
+      showTimeline: function() {
+        this.showLeadsTimeline(1); //传入leadsId
+      }
+  c.  引用组件
+      <LeadsTimeline></LeadsTimeline>
+
+21.当前用户信息，集成CommonActionMixin，可使用方法：
+  a. getCurrentEmployeeDeptId
+  b. checkIsinHQ //是否总部员工，返回boolean
+  c. getCurrentEmployeeId
+  d. getCurrentNewRetailEmployeeShopId 需要判断返回值是否为null，有值的话则为shopId

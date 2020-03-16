@@ -1,0 +1,176 @@
+:root {
+  --langbo-text-impressive: #EE8523;
+  --langbo-text-important: #F8A91F;
+  --langbo-text-normal: #6C757D;
+}
+.content-wrapper {
+  padding: 1rem 1rem;
+  width: 100%;
+}
+
+.menu-wrapper {
+  width: 1260px;
+}
+
+.el-header {
+  background-color: white;
+  font-size: 1.5rem;
+  text-align: left;
+  border-bottom: 1px solid #cccccc;
+  margin-bottom: 1rem;
+}
+
+.lb-section {
+  padding: 1rem;
+}
+
+.lb-section-header {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  padding-left: 1rem;
+  display: flex;
+}
+
+.lb-section-header::before {
+  content: "◇";
+  margin-right: 0.5rem;
+  font-size: 1.5rem;
+}
+
+.lb-section-header .lb-header-text {
+  width: 10rem;
+}
+
+.lb-section-header .lb-header-action {
+  flex: 1;
+  text-align: right;
+}
+
+main.el-main {
+  padding: 0;
+  text-align: left;
+  line-height: normal;
+  background-color: white;
+}
+
+.lb-action {
+  margin: 2rem;
+  text-align: center;
+}
+
+.lb-action button {
+  margin-right: 3rem;
+}
+
+.lb-form-line {
+  flex: 1;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+}
+
+.lb-form-line .el-form-item {
+  flex: 1;
+  margin-right: 5rem;
+}
+
+.lb-search-group {
+  border: 1px solid #cccccc;
+  padding: 1rem 2rem;
+}
+
+.lb-form-action {
+  display: flex;
+  justify-content: center;
+  padding: 1rem 1rem 0;
+}
+
+.lb-card {
+  margin-bottom: 2rem;
+}
+
+.lb-card-title {
+  font-size: 1.2rem;
+}
+
+.lb-card-line {
+  flex: 1;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.lb-card-line-item {
+  margin-right: 5rem;
+}
+
+.lb-card-line-icon {
+  color: #e48229;
+  font-weight: bold;
+  margin-right: 0.2rem;
+}
+
+.lb-card-line-title {
+  margin-right: 1rem;
+}
+
+.lb-card-line-content {
+}
+
+.lb-card-table {
+  width: 100%;
+  margin-bottom: 2rem
+}
+
+.lb-table-cell-vertical {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.lb-table-pagination {
+  float: right;
+  margin-top: 1rem;
+}
+
+.lb-loading-container {
+  min-height: 5rem;
+}
+
+.ex-viewer {
+  width: 65%;
+  min-height: 300px;
+  background-color: white;
+  border: 1px solid #cccccc;
+}
+
+.lb-hint-text {
+  color: #666666;
+  font-style: italic;
+  font-size: 0.8rem;
+  margin-bottom: 1rem;
+}
+
+.lb-hint-strong {
+  color: #333333;
+  font-size: 1.2rem;
+  font-style: italic;
+  margin-bottom: 1rem;
+}
+
+.lb-message-cancel {
+  float: right;
+  margin-left: 1rem;
+}
+
+// element-ui table换行方式
+.el-table .cell {
+  word-break: normal;
+  white-space: pre-wrap;
+ }
+
+ .el-table .el-button {
+   padding: 5px;
+ }

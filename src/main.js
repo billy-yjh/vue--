@@ -6,6 +6,7 @@ import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
 import echarts from 'echarts'
 import "./assets/style/resat.scss"
+import "./assets/style/site.scss"
 Vue.prototype.$echarts = echarts
 Vue.config.productionTip = false
 Vue.use(ElementUI)
