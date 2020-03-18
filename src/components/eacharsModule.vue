@@ -36,6 +36,11 @@ export default {
       echarts: echarts
     };
   },
+  watch: {
+    echart_List() {
+      this.init()
+    }
+  },
   mounted() {
     this.init();
     const self = this;
