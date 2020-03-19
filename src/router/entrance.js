@@ -1,6 +1,7 @@
 import Layout from "../layout/layout.vue"
 import Welcome from "../pages/main/welcome.vue"
 import TemperatureCalculation from "../pages/main/TemperatureCalculation.vue"
+import BergFormula from "../pages/main/BergFormula.vue"
 
 export default [
   {
@@ -23,6 +24,11 @@ export default [
         path: 'temperaturevalculation',
         name: 'entrance-temperaturevalculation',
         component: TemperatureCalculation
+      },
+      {
+        path: 'bergformula',
+        name: 'entrance-bergformula',
+        component: BergFormula
       }
     ]
   }

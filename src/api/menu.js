@@ -7,6 +7,11 @@ export default [
         index: 'TemperatureCalculation',
         name: '温度计算',
         route: '/main/temperaturevalculation'
+      },
+      {
+        index: 'BergFormula',
+        name: '博格公式计算',
+        route: '/main/bergformula'
       }
     ]
   }

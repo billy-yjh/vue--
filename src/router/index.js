@@ -6,8 +6,8 @@ Vue.use(VueRouter)
 const routes = entranceRoute
 
 const router = new VueRouter({
-  routes,
-  scrollBehavior: () => ({ y: 0 })
+  routes
+  // scrollBehavior: () => ({ y: 0 })
 })
 
 export default router
